@@ -1,0 +1,18 @@
+# Good Medias
+
+> Good Medias is a web design, web development, SEO and GEO (Generative Engine Optimization) agency. We build high-performance websites and grow them so businesses rank on Google and get cited by AI assistants such as ChatGPT, Perplexity, Gemini and Google AI Overviews.
+
+## Services
+- [Web Development](https://goodmedias.com/#services): Custom websites on Next.js, Webflow, WordPress, Shopify and headless CMS with 95+ PageSpeed scores.
+- [Web Design](https://goodmedias.com/#services): Conversion-first, mobile-first UI/UX and brand design systems.
+- [SEO](https://goodmedias.com/#services): Technical audits, on-page optimization, local SEO, content strategy and authority building.
+- [GEO](https://goodmedias.com/#services): Generative Engine Optimization so AI assistants understand, trust and recommend a brand.
+
+## Industries
+- [Industries we serve](https://goodmedias.com/#industries): Automotive, Healthcare, Dental, Legal, Home Services, Real Estate, Construction, Hospitality, E-commerce, Finance & Insurance, SaaS & Tech, Education.
+
+## Company
+- [About](https://goodmedias.com/#about)
+- [Process](https://goodmedias.com/#process)
+- [FAQ](https://goodmedias.com/#faq)
+- [Contact / Free audit](https://goodmedias.com/#contact): hello@goodmedias.com
