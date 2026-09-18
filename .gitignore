@@ -5,6 +5,9 @@ desktop.ini
 .vscode/
 .idea/
 
+# Build output
+_site/
+
 # Local tooling
 .claude/
 node_modules/

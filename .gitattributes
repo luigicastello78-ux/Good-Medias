@@ -1,0 +1,8 @@
+# Normalize to LF in the repo. Sveltia CMS commits via the GitHub API, which
+# writes LF — without this, CMS edits and local edits produce noisy diffs.
+* text=auto eol=lf
+*.svg text eol=lf
+*.png binary
+*.jpg binary
+*.webp binary
+*.woff2 binary

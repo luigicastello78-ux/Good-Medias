@@ -7,12 +7,12 @@
   const toTop = $(".to-top");
   const onScroll = () => {
     const y = window.scrollY;
-    header.classList.toggle("is-scrolled", y > 10);
-    toTop.classList.toggle("show", y > 700);
+    if (header) header.classList.toggle("is-scrolled", y > 10);
+    if (toTop) toTop.classList.toggle("show", y > 700);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
-  toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  if (toTop) toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
   // Mobile menu
   const toggle = $(".menu-toggle");
@@ -99,22 +99,24 @@
   // Testimonials slider
   const slides = $$(".t-slide");
   const dots = $(".t-dots");
-  let current = 0;
-  let timer;
-  slides.forEach(() => dots.appendChild(document.createElement("i")));
-  const go = (i) => {
-    current = (i + slides.length) % slides.length;
-    slides.forEach((s, idx) => s.classList.toggle("is-active", idx === current));
-    $$("i", dots).forEach((d, idx) => d.classList.toggle("on", idx === current));
-  };
-  const auto = () => {
-    clearInterval(timer);
-    timer = setInterval(() => go(current + 1), 7000);
-  };
-  $(".t-nav .prev").addEventListener("click", () => { go(current - 1); auto(); });
-  $(".t-nav .next").addEventListener("click", () => { go(current + 1); auto(); });
-  go(0);
-  auto();
+  if (slides.length && dots) {
+    let current = 0;
+    let timer;
+    slides.forEach(() => dots.appendChild(document.createElement("i")));
+    const go = (i) => {
+      current = (i + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle("is-active", idx === current));
+      $$("i", dots).forEach((d, idx) => d.classList.toggle("on", idx === current));
+    };
+    const auto = () => {
+      clearInterval(timer);
+      timer = setInterval(() => go(current + 1), 7000);
+    };
+    $(".t-nav .prev").addEventListener("click", () => { go(current - 1); auto(); });
+    $(".t-nav .next").addEventListener("click", () => { go(current + 1); auto(); });
+    go(0);
+    auto();
+  }
 
   // FAQ accordion
   $$(".faq-item").forEach((item) => {
@@ -132,16 +134,22 @@
 
   // Forms (front-end only — wire to your form backend)
   const cta = $(".cta-form");
-  cta.addEventListener("submit", (e) => {
-    e.preventDefault();
-    cta.classList.add("sent");
-  });
-  $(".subscribe form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const input = $("input", e.target);
-    input.value = "";
-    input.placeholder = "Thanks — you're subscribed!";
-  });
+  if (cta) {
+    cta.addEventListener("submit", (e) => {
+      e.preventDefault();
+      cta.classList.add("sent");
+    });
+  }
+  const subscribe = $(".subscribe form");
+  if (subscribe) {
+    subscribe.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const input = $("input", e.target);
+      input.value = "";
+      input.placeholder = "Thanks — you're subscribed!";
+    });
+  }
 
-  $("#year").textContent = new Date().getFullYear();
+  const year = $("#year");
+  if (year) year.textContent = new Date().getFullYear();
 })();

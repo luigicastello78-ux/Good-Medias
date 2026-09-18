@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta name="theme-color" content="#E8572F">
+
+  <meta property="og:type" content="{{ ogType | default('website') }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ ogTitle | default(title) }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+{%- if ogImage %}
+  <meta property="og:image" content="{{ ogImage }}">
+{%- endif %}
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v={{ build.id }}">
+{% if isHome %}{% include "partials/schema-home.njk" %}{% endif %}
+{%- if schemaJson %}
+  <script type="application/ld+json">
+{{ schemaJson | safe }}
+  </script>
+{%- endif %}
+</head>
+<body>
+{% set base = '' if page.url == '/' else '/' %}
+{% include "partials/sprite.njk" %}
+
+<div class="site">
+
+{% include "partials/header.njk" %}
+
+  <main id="top">
+{{ content | safe }}
+  </main>
+
+{% include "partials/footer.njk" %}
+</div>
+
+<button class="to-top" aria-label="Back to top"><svg><use href="#i-arrow-up"/></svg></button>
+
+<script src="/js/main.js?v={{ build.id }}"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+  <header class="header">
+    <a href="{{ base }}#top" class="brand" aria-label="Good Medias home">
+      <img src="/assets/logo-mark.svg" alt="" width="38" height="32">
+      <span>Good<b>Medias</b></span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="{{ base }}#top" class="is-active">Home</a></li>
+        <li><a href="{{ base }}#about">About</a></li>
+        <li class="has-drop">
+          <a href="{{ base }}#services">Services <svg><use href="#i-chev"/></svg></a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="{{ base }}#services">Web Development <small>Custom, fast, secure builds</small></a></li>
+              <li><a href="{{ base }}#services">Web Design <small>UI/UX that converts</small></a></li>
+              <li><a href="{{ base }}#services">SEO <small>Rank higher on Google</small></a></li>
+              <li><a href="{{ base }}#services">GEO <small>Get cited by AI assistants</small></a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="{{ base }}#industries">Industries</a></li>
+        <li><a href="{{ base }}#process">Process</a></li>
+        <li><a href="{{ base }}#faq">FAQ</a></li>
+        <li><a href="{{ base }}#blog">Blog</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a href="{{ base }}#contact" class="btn btn-primary">Get a Free Audit <svg><use href="#i-arrow-ur"/></svg></a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </header>

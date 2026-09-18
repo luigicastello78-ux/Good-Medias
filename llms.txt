@@ -11,6 +11,12 @@
 ## Industries
 - [Industries we serve](https://goodmedias.com/#industries): Automotive, Healthcare, Dental, Legal, Home Services, Real Estate, Construction, Hospitality, E-commerce, Finance & Insurance, SaaS & Tech, Education.
 
+## Blog
+- [Blog](https://goodmedias.com/blog/): Guides on web design, web development, SEO and Generative Engine Optimization.
+- [What Is GEO? How to Get Your Business Recommended by ChatGPT](https://goodmedias.com/blog/what-is-geo/)
+- [7 Website Mistakes Costing Medical Practices New Patients](https://goodmedias.com/blog/medical-website-mistakes/)
+- [Core Web Vitals in 2026: Why Site Speed Still Decides Rankings](https://goodmedias.com/blog/core-web-vitals-2026/)
+
 ## Company
 - [About](https://goodmedias.com/#about)
 - [Process](https://goodmedias.com/#process)

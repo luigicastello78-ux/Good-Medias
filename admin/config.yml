@@ -1,0 +1,43 @@
+# Sveltia CMS — https://sveltiacms.app/en/docs
+#
+# Editing locally (no OAuth needed, Chrome/Edge only):
+#   npm run dev  ->  http://localhost:5510/admin/
+#   click "Work with Local Repository" and pick the project folder.
+#
+# Editing against GitHub: see "Blog / CMS" in README.md.
+
+backend:
+  name: github
+  repo: luigicastello78-ux/Good-Medias
+  branch: main
+  # base_url: https://YOUR-AUTH-WORKER.workers.dev   # uncomment once the auth worker is deployed
+
+media_folder: assets/blog
+public_folder: /assets/blog
+
+collections:
+  - name: posts
+    label: Blog posts
+    label_singular: Post
+    folder: content/posts
+    create: true
+    extension: md
+    format: yaml-frontmatter
+    slug: '{{slug}}'
+    preview_path: 'blog/{{slug}}'
+    summary: '{{title}}'
+    sortable_fields: [date, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - {
+          label: Meta description,
+          name: description,
+          widget: text,
+          hint: 'Shown in Google and AI answers. Aim for 120-160 characters.',
+        }
+      - { label: Category, name: tag, widget: string, default: GEO }
+      - { label: Publish date, name: date, widget: datetime, time_format: false, format: 'yyyy-MM-dd' }
+      - { label: Reading time, name: readingTime, widget: string, default: '5 min read' }
+      - { label: Cover image, name: image, widget: image }
+      - { label: Cover image alt text, name: imageAlt, widget: string }
+      - { label: Body, name: body, widget: markdown }

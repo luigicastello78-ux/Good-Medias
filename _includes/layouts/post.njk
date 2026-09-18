@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+ogType: article
+---
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": {{ title | dump | safe }},
+      "description": {{ description | dump | safe }},
+      "image": {{ image | dump | safe }},
+      "datePublished": "{{ date | isoDate }}",
+      "dateModified": "{{ date | isoDate }}",
+      "articleSection": {{ tag | dump | safe }},
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ site.url }}{{ page.url }}" },
+      "author": { "@type": "Organization", "name": {{ site.name | dump | safe }}, "url": "{{ site.url }}/" },
+      "publisher": { "@type": "Organization", "name": {{ site.name | dump | safe }}, "url": "{{ site.url }}/" }
+    }
+    </script>
+
+    <article class="section article">
+      <div class="container article-head">
+        <a href="/blog/" class="back-link"><svg><use href="#i-arrow-l"/></svg> All Articles</a>
+        <span class="tag article-tag">{{ tag }}</span>
+        <h1>{{ title }}</h1>
+        <div class="post-meta article-meta">
+          <span><svg><use href="#i-cal"/></svg><time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time></span>
+          <span><svg><use href="#i-clock"/></svg>{{ readingTime }}</span>
+        </div>
+      </div>
+
+      <div class="container">
+        <img class="article-cover" src="{{ image }}" alt="{{ imageAlt }}">
+        <div class="article-body">
+{{ content | safe }}
+        </div>
+      </div>
+    </article>
+
+    <section class="container">
+      <div class="cta">
+        <div>
+          <span class="eyebrow" style="color:#fff">Free Website &amp; AI Visibility Audit</span>
+          <h2>Want This Working On Your Site?</h2>
+          <p>Get a no-obligation audit showing where you rank today, how AI assistants describe your brand, and the fastest wins available.</p>
+        </div>
+        <div><a href="/#contact" class="btn btn-white">Get a Free Audit <svg><use href="#i-arrow-ur"/></svg></a></div>
+      </div>
+    </section>
